@@ -7,8 +7,10 @@ Created on 11 jul 2013
 '''
 
 
-import pygame, sys, time, random
-from pygame.locals import *
+import pygame_sdl2 as pygame 
+import sys, time, random
+# from pygame.locals import *
+from pygame_sdl2.locals import *
 
 pygame.init()
 fpsClock = pygame.time.Clock()
@@ -30,7 +32,8 @@ changeDirection = direction
 score = 0
 
 def gameOver(score):
-    gameOverFont = pygame.font.Font('freesansbold.ttf',72)
+    #gameOverFont = pygame.font.Font('freesansbold.ttf',72)
+    gameOverFont = pygame.font.Font('Arial',72)
     gameOverSurf = gameOverFont.render('Game Over',True,greyColor)
     gameOverRect = gameOverSurf.get_rect()
     gameOverRect.midtop = (320,10)
@@ -50,6 +53,7 @@ def gameOver(score):
     
 def showScore(score):
     scoreFont = pygame.font.Font('freesansbold.ttf',24)
+    #scoreFont = pygame.font.Font('Arial',24)
     scoreSurf = scoreFont.render('Score: ' + str(score),True,greyColor)
     scoreRect = scoreSurf.get_rect()
     scoreRect.midtop = (320,10)
